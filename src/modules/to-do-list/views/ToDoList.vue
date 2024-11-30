@@ -91,7 +91,7 @@ function navigateToCreate() {
       <v-icon :name="PxEdit.name" class="size-4 md:size-6" />
     </h3>
 
-    <div class="mb-2 flex items-center gap-2">
+    <div class="mb-2 flex max-w-[270px] flex-col gap-2">
       <span> Показывать только </span>
       <v-select
         :model-value="show"
@@ -101,23 +101,23 @@ function navigateToCreate() {
         value-prop="value"
         @change="$router.push({ query: { show: $event?.key } })"
       />
-    </div>
 
-    <v-tooltip
-      text="Выберите задачи на удаление"
-      :show="itemsToDeleteLength === 0"
-    >
-      <template #default="{ listener }">
-        <v-button
-          :disabled="itemsToDeleteLength === 0"
-          class="text-sm"
-          v-on="listener"
-          @click="handleDelete"
-        >
-          Удалить задачи
-        </v-button>
-      </template>
-    </v-tooltip>
+      <v-tooltip
+        text="Выберите задачи на удаление"
+        :show="itemsToDeleteLength === 0"
+      >
+        <template #default="{ listener }">
+          <v-button
+            :disabled="itemsToDeleteLength === 0"
+            class="mb-2 text-sm"
+            v-on="listener"
+            @click="handleDelete"
+          >
+            Удалить задачи
+          </v-button>
+        </template>
+      </v-tooltip>
+    </div>
 
     <div class="flex flex-col items-end justify-start gap-20">
       <to-do-section
