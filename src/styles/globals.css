@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Overpass;
+  src: url('/fonts/Overpass-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url('/fonts/Overpass-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    appearance: textfield;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container-snap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container-snap {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+:root {
+  font-family: 'Overpass', sans-serif;
+  font-size: 18px;
+
+  --color-background: #eaecff;
+  --color-text: #4a4a4a;
+  --color-border: #302a2a;
+  --color-accent: #242b33b6;
+  --color-background-accent: #f4f4fb;
+  --color-slider: #5a9bd5;
+  --color-placeholder: #8c8c8c;
+  --color-slider-background: #d6e6ff;
+
+  /* приоритеты  */
+  --color-high-priority: #ef9b95;
+  --color-medium-priority: #fde0b5;
+  --color-low-priority: #bdf4be;
+  --color-no-priority: var(--color-background-accent);
+}
+
+&.dark {
+  --color-background: #16151d;
+  --color-text: #fff9c5;
+  --color-border: #766d98;
+  --color-accent: #615a7c;
+  --color-background-accent: #25222f;
+  --color-slider: #ebf179;
+  --color-placeholder: #766d98;
+  --color-slider-background: #534862;
+
+   /* приоритеты  */
+   --color-high-priority: #3b1d1b;
+   --color-medium-priority: #142549;
+   --color-low-priority: #385044;
+   --color-no-priority: var(--color-background-accent);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+div,
+nav,
+body,
+section,
+article,
+aside,
+footer,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+a,
+img,
+figure,
+figcaption,
+blockquote,
+dl,
+dt,
+dd,
+hr,
+table,
+tr,
+th,
+td,
+thead,
+tbody,
+tfoot,
+caption,
+form,
+fieldset,
+legend,
+label,
+input,
+textarea,
+button,
+select,
+option,
+optgroup,
+iframe,
+span {
+  transition: background 0.2s ease-in;
+}
+
+input {
+  &::placeholder {
+    color: var(--color-placeholder);
+  }
+}
