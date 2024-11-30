@@ -105,6 +105,9 @@ const listeners = {
   mouseleave: () => {
     isVisible.value = false;
   },
+  touchstart: () => {
+    isVisible.value = false;
+  },
 };
 </script>
 
