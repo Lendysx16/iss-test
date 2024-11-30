@@ -27,10 +27,11 @@ export default class ToDoItem implements IToDoItem {
     this.daysToComplete =
       data.daysToComplete > 3650 ? 3650 : data.daysToComplete;
 
-    this.timeLeft =
+    this.timeLeft = Math.ceil(
       dayjs(data.createdAt)
-        .add(this.daysToComplete, 'day')
-        .diff(dayjs(), 'day') + 1;
+        .add(this.daysToComplete, 'h')
+        .diff(dayjs(), 'h') / 24,
+    );
 
     this.title = data.title;
     if (this.completed) {
